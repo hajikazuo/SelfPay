@@ -1,0 +1,19 @@
+﻿[
+  {
+    "outputFileName": "wwwroot/assets/bundler/js/selfpay.all.min.js",
+    "inputFiles": [
+      "node_modules/toastr/build/toastr.min.js",
+      "wwwroot/assets/js/script.js",
+      "wwwroot/assets/js/demo.js",
+      "wwwroot/assets/js/tabler.js"
+    ]
+  },
+  {
+    "outputFileName": "wwwroot/assets/bundler/css/selfpay.all.min.css",
+    "inputFiles": [
+      "wwwroot/assets/css/tabler.css",
+      "wwwroot/assets/css/demo.css",
+      "node_modules/toastr/build/toastr.min.css"
+    ]
+  }
+]

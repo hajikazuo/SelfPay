@@ -32,6 +32,7 @@ namespace SelfPay.Mvc.Controllers
         public async Task<IActionResult> Index()
         {
             var services = await _serviceRepository.GetAllAsync();
+            ViewBag.Confirm = TempData["Confirm"];
             return View(services);
         }
 
@@ -67,6 +68,7 @@ namespace SelfPay.Mvc.Controllers
                 service.ImageUrl = await _uploadService.UploadPhoto(file);
                 await _serviceRepository.CreateAsync(service);
 
+                TempData["Confirm"] = " <script>$(document).ready(function(){MostraConfirm('Sucesso','Cadastrado com sucesso');})</script>";
                 return RedirectToAction(nameof(Index));
             }
             return View(service);
@@ -105,6 +107,7 @@ namespace SelfPay.Mvc.Controllers
                 }
 
                 await _serviceRepository.UpdateAsync(service);
+                TempData["Confirm"] = "<script>$(document).ready(function () {MostraConfirm('Sucesso', 'Atualizado com sucesso!');})</script>";
                 return RedirectToAction(nameof(Index));
             }
             return View(service);
@@ -119,6 +122,7 @@ namespace SelfPay.Mvc.Controllers
             if (service != null)
             {
                 await _serviceRepository.DeleteAsync(id);
+                TempData["Confirm"] = "<script>$(document).ready(function () {MostraConfirm('Sucesso', 'Excluído com sucesso!');})</script>";
             }
             return RedirectToAction(nameof(Index));
         }

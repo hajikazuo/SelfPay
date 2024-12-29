@@ -1,0 +1,7 @@
+﻿@using Microsoft.AspNetCore.Identity
+@using SelfPay.Common.Models.Users
+@inject UserManager<User> UserManager
+
+<ul class="navbar-nav">
+    <a class="dropdown-item" asp-area="" asp-controller="account" asp-action="logout">Logout</a>
+</ul>

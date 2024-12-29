@@ -10,14 +10,20 @@
         @foreach (var item in Model)
         {
             <div class="col-md-6 col-lg-4">
-                <div class="card" style="width: 18rem;">
-                    <img src="/img/services/@item.ImageUrl" onerror="ImgError(this)" class="card-img-top" alt="...">
+                <div class="card">
+                    <div class="img-responsive img-responsive-21x9 card-img-top" style="background-image: url(/assets/img/services/@item.ImageUrl)" onerror="ImgError(this)"></div>
                     <div class="card-body">
-                        <h5 class="card-title">@item.Name</h5>
-                        <p class="card-text">@item.Description</p>
-                        <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price15 })" class="btn btn-primary">15 minutos</a>
-                        <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price20 })" class="btn btn-primary">20 minutos</a>
-                        <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price30 })" class="btn btn-primary">30 minutos</a>
+                        <h3 class="card-title">@item.Name</h3>
+                        <p class="text-secondary">
+                            @item.Description
+                        </p>
+                    </div>
+                    <div class="card-footer">
+                        <div class="btn-group" role="group">
+                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price15 })" class="btn btn-primary">15 min</a>
+                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price20 })" class="btn btn-primary">20 min</a>
+                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price30 })" class="btn btn-primary">30 min</a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -25,3 +31,4 @@
 
     </div>
 </div>
+
