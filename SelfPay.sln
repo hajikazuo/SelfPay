@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35527.113 d17.12
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfPay.Mvc", "SelfPay.Mvc\SelfPay.Mvc.csproj", "{122DCCE1-43AE-4645-BFC3-52737DBFC5AF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SelfPay.Common", "SelfPay.Common\SelfPay.Common.csproj", "{B274B958-78FF-4304-8101-0434A3917B7D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{122DCCE1-43AE-4645-BFC3-52737DBFC5AF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{122DCCE1-43AE-4645-BFC3-52737DBFC5AF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{122DCCE1-43AE-4645-BFC3-52737DBFC5AF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{122DCCE1-43AE-4645-BFC3-52737DBFC5AF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B274B958-78FF-4304-8101-0434A3917B7D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B274B958-78FF-4304-8101-0434A3917B7D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B274B958-78FF-4304-8101-0434A3917B7D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B274B958-78FF-4304-8101-0434A3917B7D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

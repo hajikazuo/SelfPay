@@ -1,0 +1,79 @@
+﻿@model SelfPay.Common.Models.Service
+
+@{
+    var pageName = "Editar serviço";
+    ViewData["Title"] = pageName;
+}
+
+<div class="container-xl">
+    <div class="row row-cards">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">@pageName</h4>
+                </div>
+                <form asp-action="Edit" enctype="multipart/form-data">
+                    <div class="card-body">
+                        <div class="row g-5">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <input type="hidden" asp-for="Id" />
+                            <input type="hidden" asp-for="ImageUrl" />
+
+
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Description" class="control-label"></label>
+                                <input asp-for="Description" class="form-control" />
+                                <span asp-validation-for="Description" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Price15" class="control-label"></label>
+                                <input type="number" asp-for="Price15" class="form-control" />
+                                <span asp-validation-for="Price15" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Price20" class="control-label"></label>
+                                <input type="number" asp-for="Price20" class="form-control" />
+                                <span asp-validation-for="Price20" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Price30" class="control-label"></label>
+                                <input type="number" asp-for="Price30" class="form-control" />
+                                <span asp-validation-for="Price30" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="ImageUrl" class="control-label"></label>
+                                <input type="file" name="file" id="formFile" class="form-control" />
+                                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-end">
+                        <div class="d-flex">
+                            <a asp-action="Index" class="btn btn-link">Voltar para a lista</a>
+                            <button type="submit" class="btn btn-primary ms-auto">Salvar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+
