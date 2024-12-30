@@ -39,13 +39,13 @@ namespace SelfPay.Common.Repositories.Implementation
 
         public async Task<Service> UpdateAsync(Service service)
         {
-            var existingService = await _context.Services.FirstOrDefaultAsync(s => s.Id == service.Id);
-            if (existingService is null)
+            var existingItem = await _context.Services.FirstOrDefaultAsync(s => s.Id == service.Id);
+            if (existingItem is null)
             {
                 return null;
             }
 
-            _context.Entry(existingService).CurrentValues.SetValues(service);
+            _context.Entry(existingItem).CurrentValues.SetValues(service);
 
             await _context.SaveChangesAsync();
 
@@ -54,16 +54,16 @@ namespace SelfPay.Common.Repositories.Implementation
 
         public async Task<Service> DeleteAsync(Guid id)
         {
-            var existingService = await _context.Services.FirstOrDefaultAsync(s => s.Id == id);
-            if (existingService is null)
+            var existingItem = await _context.Services.FirstOrDefaultAsync(s => s.Id == id);
+            if (existingItem is null)
             {
                 return null;
             }
 
-            _context.Services.Remove(existingService);
+            _context.Services.Remove(existingItem);
             await _context.SaveChangesAsync();
 
-            return existingService;
+            return existingItem;
         }
     }
 }

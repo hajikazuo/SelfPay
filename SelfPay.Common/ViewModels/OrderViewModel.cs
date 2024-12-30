@@ -17,5 +17,7 @@ namespace SelfPay.Common.ViewModels
 
         [Display(Name = "Preço")]
         public decimal Price { get; set; }
+
+        public Guid ClientId { get; set; }
     }
 }

@@ -13,7 +13,7 @@ namespace SelfPay.Mvc.Controllers
             _serviceRepository = serviceRepository;
         }
 
-        public async Task<IActionResult> Create(Guid id, decimal price)
+        public async Task<IActionResult> Create(Guid id, decimal price, Guid clientId)
         {
             if (id == null)
             {
@@ -31,6 +31,7 @@ namespace SelfPay.Mvc.Controllers
             response.Name = service.Name;
             response.Description = service.Description; 
             response.Price = price;
+            response.ClientId = id;
             return View(response);
         }
     }

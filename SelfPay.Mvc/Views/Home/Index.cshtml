@@ -1,34 +1,54 @@
-﻿@model IEnumerable<SelfPay.Common.Models.Service>
+﻿@model SelfPay.Common.Models.ClientInfo
 
 @{
-    var pageName = "Listagem de serviços";
+    var pageName = "Cadastro inicial";
     ViewData["Title"] = pageName;
 }
 
 <div class="container-xl">
     <div class="row row-cards">
-        @foreach (var item in Model)
-        {
-            <div class="col-md-6 col-lg-4">
-                <div class="card">
-                    <div class="img-responsive img-responsive-21x9 card-img-top" style="background-image: url(/assets/img/services/@item.ImageUrl)" onerror="ImgError(this)"></div>
+        <div class="col-12">
+            <div class="card">
+                <div class="card-header">
+                    <h4 class="card-title">Antes de iniciarmos, por favor preencha os dados abaixo:</h4>
+                </div>
+                <form asp-action="Create">
                     <div class="card-body">
-                        <h3 class="card-title">@item.Name</h3>
-                        <p class="text-secondary">
-                            @item.Description
-                        </p>
-                    </div>
-                    <div class="card-footer">
-                        <div class="btn-group" role="group">
-                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price15 })" class="btn btn-primary">15 min</a>
-                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price20 })" class="btn btn-primary">20 min</a>
-                            <a href="@Url.Action("Create", "Order", new { id = item.Id, price = item.Price30 })" class="btn btn-primary">30 min</a>
+                        <div class="row g-5">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                            <div class="form-group">
+                                <label asp-for="Name" class="control-label"></label>
+                                <input asp-for="Name" class="form-control" />
+                                <span asp-validation-for="Name" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Plate" class="control-label"></label>
+                                <input asp-for="Plate" class="form-control" />
+                                <span asp-validation-for="Plate" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Email" class="control-label"></label>
+                                <input asp-for="Email" class="form-control" />
+                                <span asp-validation-for="Email" class="text-danger"></span>
+                            </div>
+
+                            <div class="form-group">
+                                <label asp-for="Telephone" class="control-label"></label>
+                                <input asp-for="Telephone" class="form-control" />
+                                <span asp-validation-for="Telephone" class="text-danger"></span>
+                            </div>
                         </div>
                     </div>
-                </div>
+                    <div class="card-footer text-end">
+                        <div class="d-flex">
+                            <button type="submit" class="btn btn-primary ms-auto">Salvar</button>
+                        </div>
+                    </div>
+                </form>
             </div>
-        }
-
+        </div>
     </div>
 </div>
-

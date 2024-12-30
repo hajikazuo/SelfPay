@@ -19,8 +19,20 @@
                 </div>
                 <div class="card-footer text-end">
                     <div class="d-flex">
-                        <a class="btn btn-primary">Pix</a>
-                        <a class="btn btn-primary">Cartão</a>
+                        <form asp-action="Create" method="post" class="me-2">
+                            @Html.HiddenFor(model => model.ClientId)
+                            @Html.HiddenFor(model => model.Name)
+                            @Html.HiddenFor(model => model.Description)
+                            @Html.HiddenFor(model => model.Price)
+                            <button type="submit" class="btn btn-primary">Pix</button>
+                        </form>
+                        <form asp-action="Create" method="post">
+                            @Html.HiddenFor(model => model.ClientId)
+                            @Html.HiddenFor(model => model.Name)
+                            @Html.HiddenFor(model => model.Description)
+                            @Html.HiddenFor(model => model.Price)
+                            <button type="submit" class="btn btn-primary">Cartão</button>
+                        </form>
                     </div>
                 </div>
             </div>

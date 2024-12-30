@@ -17,6 +17,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<IUserRepository, UsuarioRepository>();
 builder.Services.AddScoped<IServiceRepository, ServiceRepository>();
+builder.Services.AddScoped<IClientInfoRepository, ClientInfoRepository>();
 
 builder.Services.AddScoped<ISeedService, SeedService>();
 builder.Services.AddScoped<IUploadService, UploadService>();

@@ -13,6 +13,7 @@ namespace SelfPay.Common.Data
 
         public DbSet<User> Users { get; set; }
         public DbSet<Service> Services { get; set; }
+        public DbSet<ClientInfo> ClientInfos { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
